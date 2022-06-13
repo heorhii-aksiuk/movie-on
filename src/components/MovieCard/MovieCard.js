@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, useRouteMatch, Route } from 'react-router-dom';
+import { NavLink, useRouteMatch, Route, useHistory } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import Cast from '../../components/Cast/Cast';
 import Reviews from '../../components/Reviews/Reviews';
 import { PENDING, RESOLVED, REJECTED } from '../../services/stateMachine';
+import Button from '../../components/Button/Button';
 
 function MovieCard({ movieId, movie, status, error }) {
   const { url } = useRouteMatch();
+  const history = useHistory();
+  const showButtons = name => !history.location.pathname.includes(name);
+  const showCastButton = showButtons('cast');
+  const showReviewsButton = showButtons('reviews');
 
   function getMovieRuntime() {
     if (movie) {
@@ -48,12 +53,20 @@ function MovieCard({ movieId, movie, status, error }) {
           <div>
             <h4>Additional information</h4>
             <ul>
-              <li>
-                <NavLink to={`${url}/cast`}>Cast</NavLink>
-              </li>
-              <li>
-                <NavLink to={`${url}/reviews`}>Reviews</NavLink>
-              </li>
+              {showCastButton && (
+                <li>
+                  <Button>
+                    <NavLink to={`${url}/cast`}>Cast</NavLink>
+                  </Button>
+                </li>
+              )}
+              {showReviewsButton && (
+                <li>
+                  <Button>
+                    <NavLink to={`${url}/reviews`}>Reviews</NavLink>
+                  </Button>
+                </li>
+              )}
             </ul>
           </div>
 

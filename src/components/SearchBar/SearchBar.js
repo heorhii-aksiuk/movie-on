@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory, useLocation } from 'react-router-dom';
+import Button from '../Button/Button';
 
 function SearchBar({ onSubmitGet }) {
   const history = useHistory();
@@ -30,7 +31,7 @@ function SearchBar({ onSubmitGet }) {
   return (
     <form onSubmit={handleSubmit}>
       <input onChange={handleChange} value={value} type="text" />
-      <button type="submit">Search</button>
+      <Button type="submit">Search</Button>
     </form>
   );
 }

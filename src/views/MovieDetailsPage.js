@@ -5,6 +5,7 @@ import { IDLE, PENDING, RESOLVED, REJECTED } from '../services/stateMachine';
 import fetchAPI from '../services/fetchAPI';
 import Section from '../components/Section/Section';
 import MovieCard from '../components/MovieCard/MovieCard';
+import Button from '../components/Button/Button';
 
 function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -36,9 +37,9 @@ function MovieDetailsPage() {
   return (
     <div>
       <Section title="Movie info">
-        <button onClick={goBack} type="button">
-          Go back
-        </button>
+        <Button onClick={goBack} type="button">
+          &#60; Go back
+        </Button>
         <MovieCard
           movieId={movieId}
           movie={movie}
