@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import fetchAPI from '../services/fetchAPI';
 import { IDLE, PENDING, RESOLVED, REJECTED } from '../services/stateMachine';
+import fetchAPI from '../services/fetchAPI';
 import Section from '../components/Section/Section';
 import MovieCard from '../components/MovieCard/MovieCard';
 
