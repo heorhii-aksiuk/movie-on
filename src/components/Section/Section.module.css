@@ -1,0 +1,22 @@
+.section {
+  width: 740px;
+  padding: 20px;
+  padding-top: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  height: max-content;
+}
+
+.titleWrapper {
+  margin: 0 auto;
+  width: 450px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.title {
+  padding: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+}
