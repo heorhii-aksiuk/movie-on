@@ -5,7 +5,7 @@ import Loader from '../../components/Loader/Loader';
 import Cast from '../../components/Cast/Cast';
 import Reviews from '../../components/Reviews/Reviews';
 import { PENDING, RESOLVED, REJECTED } from '../../services/stateMachine';
-import Button from '../../components/Button/Button';
+import Button from '@mui/material/Button';
 
 function MovieCard({ movieId, movie, status, error }) {
   const { url } = useRouteMatch();

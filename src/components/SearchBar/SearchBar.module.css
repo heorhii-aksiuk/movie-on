@@ -1,0 +1,9 @@
+.formBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonBox {
+  margin-left: 10px;
+}

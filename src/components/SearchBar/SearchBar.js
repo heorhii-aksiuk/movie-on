@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory, useLocation } from 'react-router-dom';
-import Button from '../Button/Button';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Search from '@mui/icons-material/Search';
+import s from './SearchBar.module.css';
 
 function SearchBar({ onSubmitGet }) {
   const history = useHistory();
@@ -29,10 +32,28 @@ function SearchBar({ onSubmitGet }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} value={value} type="text" />
-      <Button type="submit">Search</Button>
-    </form>
+    <div className={s.formBox}>
+      <div>
+        <TextField
+          onChange={handleChange}
+          value={value}
+          type="text"
+          size="small"
+          label="Part or full title"
+          variant="outlined"
+        ></TextField>
+      </div>
+      <div className={s.buttonBox}>
+        <Button
+          onClick={handleSubmit}
+          type="submit"
+          variant="contained"
+          startIcon={<Search />}
+        >
+          Search
+        </Button>
+      </div>
+    </div>
   );
 }
 
